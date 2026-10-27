@@ -1,65 +1,35 @@
-# Growth Intelligence — Growth Evidence & Integration Workspace
+# Growth Intelligence — Product Walkthrough
 
-**[Open the interactive preview →](https://ismail-bellakhel.github.io/growth-intelligence-showcase/)** · [![Verify samples](https://github.com/ismail-bellakhel/growth-intelligence-showcase/actions/workflows/verify.yml/badge.svg)](https://github.com/ismail-bellakhel/growth-intelligence-showcase/actions/workflows/verify.yml)
+**[Open the app preview →](https://ismail-bellakhel.github.io/growth-intelligence-showcase/)**
 
-**A review application bringing source configuration, reports, experiments and evidence retrieval into one workspace.**
+A workspace for connecting growth evidence, reviewing performance, planning experiments and organising reports. Designed and built by **Ismail Bellakhel**.
 
-Public showcase by **Ismail Bellakhel**. The product is Growth Intelligence; workspace labels in the private review app are not the product name.
+![Growth Intelligence — actual application interface in a public example workspace](preview.png)
 
-![Interactive provider validation preview](preview.png)
+## Explore the product
 
-## Start here — a two-minute review
+The preview opens the application's interface, with its dashboard, navigation, tabs and reporting layouts. It uses an empty example workspace so recruiters can explore the product without access to company data.
 
-1. Run the local preview below and validate a numeric GA4 property ID.
-2. Try a measurement ID such as `G-EXAMPLE`, then add the synthetic credential field to see validation errors.
-3. Read [selected-source.ts](selected-source.ts), its runnable [JavaScript adaptation](sample.mjs), and [ARCHITECTURE.md](ARCHITECTURE.md).
+- **Command Center:** see the overview, source setup and paths into the application.
+- **SEO / GEO / AEO:** browse technical, content and answer-readiness review areas.
+- **Paid Campaigns:** explore channel views, campaign reporting and source requirements.
+- **Pipeline & Sales:** inspect the funnel, attribution views and account intelligence layout.
+- **Experiments:** open the Growth Lab and try drafting an example experiment in memory.
+- **BI & Reports:** explore report tabs and drag KPIs to organise a view.
+- **Signals & Alerts:** review how evidence, recommendations and ownership are presented.
+- **Automations:** explore recurring reporting and monitoring workflows.
+- **Integrations:** browse source categories and connection states.
 
-## Problem and contribution
+## What the preview includes
 
-Growth decisions are harder when analytics, campaign, pipeline and experiment information are scattered, or when an attractive dashboard conceals missing sources. I designed and built a review application that separates available evidence from unavailable integrations and turns configuration and experiment planning into explicit workflows.
+This is a public visual walkthrough using the real application's interface, adapted to remove the private company workspace and its audit. It does not connect to the private backend. Metrics remain unavailable rather than showing invented business results. Experiment examples remain in browser memory; report-order preferences apply only to the current browser tab.
 
-The private implementation uses a TypeScript Cloudflare Worker, D1 and an HTML/JavaScript frontend. It persists workspace settings, provider metadata, experiment plans, report widgets, activity and automation drafts. A stored public-website audit supports report review. The assistant retrieves saved evidence deterministically and exposes its sources.
+The private review application includes persisted workspace settings, experiment plans, report views, activity and an evidence-retrieval assistant. Live advertising and CRM ingestion, generative inference and scheduled delivery are not presented as working in this public walkthrough.
 
-## Selected engineering decision
+## What this project demonstrates
 
-**Valid configuration is not the same as a connected integration.** Provider metadata has an explicit field allowlist. Unsupported fields, including credential fields, are rejected by this form. Missing metrics stay unavailable rather than being rendered as invented results.
+Connecting growth strategy to practical product workflows: making missing evidence visible, bringing reporting into one workspace, structuring experiments and separating configuration from a working data connection.
 
-The public sample includes three unconfigured provider definitions and the original provider validator in TypeScript. The JavaScript adaptation removes TypeScript syntax so the same validation can run in a browser without installing dependencies. These definitions describe configuration requirements; they are not live connectors or a general-purpose secret detection system.
+The complete application, backend, database, deployment settings, credentials and company records remain private. This repository does not publish the private backend architecture. Browser-delivered interface files are visible in the same way as any website.
 
-| Area | Private review implementation | Public excerpt |
-| --- | --- | --- |
-| Configuration | Persisted provider metadata and validation | Local validator with three provider definitions |
-| Workspaces | Scoped review data with a shared login | No accounts or database |
-| Reports | Stored audit and configured report views | Architecture description |
-| Experiments | Saved plans and learning notes | Scope description |
-| Assistant | Deterministic retrieval from saved evidence | No inference or external calls |
-| Campaigns / CRM / AI | Live providers not connected | Explicit unavailable states |
-| Automations | Saved drafts | No scheduling or delivery |
-
-## Run the preview
-
-Requires Python 3 for serving files and Node.js 18+ for tests. No package installation or credentials are needed.
-
-```sh
-python3 -m http.server 8080 --bind 127.0.0.1
-```
-
-Open **http://127.0.0.1:8080**. In a second terminal:
-
-```sh
-npm test
-```
-
-All example values are synthetic. The preview does not save configuration or connect to providers.
-
-## Outcome and limits
-
-The review app demonstrates persisted workflows and evidence boundaries. It is not presented as a deployed enterprise analytics platform. The shared review login does not provide individual tenant permissions; those require a separate identity and membership layer. No business performance uplift is claimed.
-
-**Skills demonstrated:** growth analytics design, integration architecture, experiment planning, evidence-based reporting, truthful data states and technical marketing workflows.
-
-## Code provenance
-
-`selected-source.ts` extracts the provider validator from `src/configuration.ts`, inspected at commit `e07d772`. `providers.mjs` selects three public field definitions from `src/providers.ts`; the import path is adjusted for this excerpt. `sample.mjs` is a syntax-only JavaScript adaptation. `index.html` and synthetic tests were prepared for this showcase.
-
-No stored audit, company workspace data, review credentials, database IDs, deployment settings or private Git history are included. See [SCOPE.md](SCOPE.md). This showcase is not distributed under an open-source license.
+A small provider-validation code sample remains available separately in [sample.mjs](sample.mjs), with synthetic checks runnable using `npm test`.
