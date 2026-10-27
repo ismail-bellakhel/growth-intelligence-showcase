@@ -1,5 +1,7 @@
 # Growth Intelligence — Growth Evidence & Integration Workspace
 
+**[Open the interactive preview →](https://ismail-bellakhel.github.io/growth-intelligence-showcase/)** · [![Verify samples](https://github.com/ismail-bellakhel/growth-intelligence-showcase/actions/workflows/verify.yml/badge.svg)](https://github.com/ismail-bellakhel/growth-intelligence-showcase/actions/workflows/verify.yml)
+
 **A review application bringing source configuration, reports, experiments and evidence retrieval into one workspace.**
 
 Public showcase by **Ismail Bellakhel**. The product is Growth Intelligence; workspace labels in the private review app are not the product name.
